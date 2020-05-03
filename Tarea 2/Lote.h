@@ -4,13 +4,11 @@
 #include <sstream>
 #include "Producto.h"
 
-using namespace std;
-
 class Lote
 {
 private:
 
-	Producto *producto;
+	Producto* producto;
 	int codigo;
 	int dia;
 	int mes;
@@ -25,9 +23,14 @@ public:
 	Producto* getProducto();
 	int getCantidad();
 	int getCosto();
+	int getCodigo();
+	virtual std::string toStringLote()const;
 
-	string toStringLote();
+	bool operator==(const Lote&);
+	bool operator!=(const Lote&);
 
 };
 
-#endif 
+std::ostream& operator<<(std::ostream&, const Lote&);
+
+#endif

@@ -1,4 +1,5 @@
 #include "Producto.h"
+using namespace  std;
 
 Producto::Producto(int codigo, string nombre, string proveedor, int precio)
 {
@@ -32,14 +33,31 @@ void Producto::setProveedor(string proveedor) { this->proveedor = proveedor; }
 
 void Producto::setPrecio(int precio) { this->precio = precio; }
 
-string Producto::toStringProducto()
+string Producto::toStringProducto()const
 {
 	stringstream s;
 
-	s << "Código del producto: " << codigo << endl;
-	s << "Nombre del producto: " << nombre << endl;
-	s << "Proveedor: " << proveedor << endl;
-	s << "Precio: " << precio << endl;
+	s << "\tCódigo del producto: " << codigo << endl;
+	s << "\tNombre del producto: " << nombre << endl;
+	s << "\tProveedor: " << proveedor << endl;
+	s << "\tPrecio: " << precio << endl;
 
 	return s.str();
+}
+bool  Producto::operator==(const Producto& aux)
+{
+	if (codigo == aux.codigo && nombre == aux.nombre && proveedor == aux.proveedor && precio == aux.precio) { return true; }
+	else { return  false; }
+}
+
+bool  Producto::operator!=(const Producto& aux)
+{
+	if (codigo != aux.codigo || nombre != aux.nombre || proveedor != aux.proveedor || precio != aux.precio) { return true; }
+	else { return  false; }
+}
+
+std::ostream& operator<<(std::ostream& salida, const Producto& u)
+{
+	salida << u.toStringProducto();
+	return salida;
 }

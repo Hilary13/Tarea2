@@ -26,7 +26,7 @@ void Controladora::menuPrincipal()
 		case '1':
 			
 			system("cls");
-			//Ingresar productos al inventario
+			Interfaz::ingresarProductos();
 			system("pause");
 			system("cls");
 			break;

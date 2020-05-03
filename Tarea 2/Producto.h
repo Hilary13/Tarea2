@@ -2,36 +2,37 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include "Lote.h"
-using namespace  std;
+//#include "Lote.h"
+
 
 class Producto
 {
 private:
 
 	int codigo;
-	string nombre;
-	string proveedor;
+	std::string nombre;
+	std::string proveedor;
 	int precio;
 	//Lote* cantidad;
 
 public:
 
-	Producto(int, string, string, int);
+	Producto(int, std::string, std::string, int);
 	Producto();
 
 	int getCodigo();
-	string getNombre();
-	string getProveedor();
+	std::string getNombre();
+	std::string getProveedor();
 	int getPrecio();
 
 	void setCodigo(int);
-	void setNombre(string);
-	void setProveedor(string);
+	void setNombre(std::string);
+	void setProveedor(std::string);
 	void setPrecio(int);
 
-	string toStringProducto();
+	virtual std::string toStringProducto()const;
 
-
+	bool operator==(const Producto&);
+	bool operator!=(const Producto&);
 };
-
+std::ostream& operator<<(std::ostream&, const Producto&);

@@ -1,6 +1,7 @@
 #ifndef LISTA_H
 #define LISTA_H
 #include "Nodo.h"
+#include "Producto.h"
 
 template<class T>
 class Lista
@@ -141,7 +142,6 @@ bool Lista<T>::buscar(T* aux)
 	return false;
 }
 //-------------------------------------------------------------------------------------------------------------
-
 template<class T>
 bool Lista<T>::listaVacia()
 {

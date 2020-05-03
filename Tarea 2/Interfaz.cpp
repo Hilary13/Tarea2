@@ -7,6 +7,18 @@ Lista<Producto>* listproducto = new Lista<Producto>;
 Lista<Lote>* listlote = new Lista<Lote>;
 
 //-------------------------------------------------------------------------
+bool Interfaz::validarInt(string n)
+{
+	int i;
+	int inicio = 0;
+	if (n.length() == 0) { return false; }
+	if (n.length() > 9) { return false; }
+	for (i = inicio; i < n.length(); i++)
+	{
+		if (!isdigit(n[i])) { return false; }
+	}
+	return true;
+}
 
 string Interfaz::read()
 {
@@ -92,10 +104,10 @@ void Interfaz::ingresarProductos()
 		cout << "       |                 Ingresar Producto                 |" << endl;
 		cout << "       +---------------------------------------------------+" << endl;
 		cout << "       |                                                   |" << endl;
-		cout << "       |     Ingrese el código del producto:               |" << endl;
+		cout << "       |     Ingrese el nombre del producto:               |" << endl;
 		cout << "       |                                                   |" << endl;
 		cout << "       +---------------------------------------------------+" << endl;
-		cout << "       Nombre:  ";
+		cout << "       Producto:  ";
 		string nombre = Interfaz::leerString();
 
 		system("cls");
@@ -106,7 +118,7 @@ void Interfaz::ingresarProductos()
 		cout << "       |     Ingrese el proveedor del producto:            |" << endl;
 		cout << "       |                                                   |" << endl;
 		cout << "       +---------------------------------------------------+" << endl;
-		cout << "       Producto:  ";
+		cout << "       Proveedor:  ";
 		string proovedor = Interfaz::leerString();
 
 		system("cls");
@@ -124,8 +136,9 @@ void Interfaz::ingresarProductos()
 
 		Producto* producto = new Producto(codigo, nombre, proovedor, precio);
 		listproducto->insertarInicio(producto);
-		cout << "Producto ingresado correctamente" << endl;
-		producto->toStringProducto();
+		cout << "\n\tProducto ingresado correctamente" << endl;
+		std::cout << "\tProducto: " << std::endl;
+		std::cout << producto->toStringProducto() << "\n\n" << std::endl;
 		system("pause");
 		system("cls");
 		Controladora::menuPrincipal();
@@ -139,7 +152,7 @@ void Interfaz::ingresarProductos()
 
 void Interfaz::ingresarLotesProducto()
 {
-	Producto* produAux;
+	Producto* produAux = new Producto;
 	system("cls");
 	cout << "       +---------------------------------------------------+" << endl;
 	cout << "       |                   Ingresar Lote                   |" << endl;
@@ -154,7 +167,7 @@ void Interfaz::ingresarLotesProducto()
 	while (listproducto->verificarCodigoExiste(codigo_produ)) {
 
 		codigo_produ = produAux->getCodigo();
-		cout << produAux->toStringProducto();
+		//cout << produAux->toStringProducto();
 
 		system("cls");
 		cout << "       +---------------------------------------------------+" << endl;

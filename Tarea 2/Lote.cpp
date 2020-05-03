@@ -1,5 +1,5 @@
 #include "Lote.h"
-
+using namespace  std;
 Lote::Lote(Producto* producto, int codigo, int dia, int mes, int anio, int cantidad, int costo)
 {
 	this->producto = producto;
@@ -16,8 +16,9 @@ Producto* Lote::getProducto() { return producto; }
 int Lote::getCantidad() { return cantidad; }
 
 int Lote::getCosto() { return costo; }
+int Lote::getCodigo() { return codigo; }
 
-string Lote::toStringLote()
+string Lote::toStringLote()const
 {
 	stringstream s;
 
@@ -28,4 +29,22 @@ string Lote::toStringLote()
 	s << "Costo: " << costo << endl;
 
 	return s.str();
+}
+
+bool  Lote::operator==(const Lote& aux)
+{
+	if (producto == aux.producto && codigo == aux.codigo && dia == aux.dia && mes == aux.mes && anio == aux.anio && cantidad == aux.cantidad && costo == aux.costo) { return true; }
+	else { return  false; }
+}
+
+bool  Lote::operator!=(const Lote& aux)
+{
+	if (producto != aux.producto || codigo != aux.codigo || dia != aux.dia || mes != aux.mes || anio != aux.anio || cantidad != aux.cantidad || costo != aux.costo) { return true; }
+	else { return  false; }
+}
+
+std::ostream& operator<<(std::ostream& salida, const Lote& u)
+{
+	salida << u.toStringLote();
+	return salida;
 }

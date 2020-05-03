@@ -1,36 +1,6 @@
-﻿  Controladora.cpp
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(13,11): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(13,11): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(13,20): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(23,47): error C2061: error de sintaxis: identificador 'Producto'
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(25,10): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(25,10): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(25,25): error C2238: símbolos (token) inesperados delante de ';'
-  Interfaz.cpp
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(13,11): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(13,11): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(13,20): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(23,47): error C2061: error de sintaxis: identificador 'Producto'
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(25,10): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(25,10): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(25,25): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Interfaz.cpp(21,29): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Interfaz.cpp(36,29): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-  Lote.cpp
-  Main.cpp
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(13,11): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(13,11): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(13,20): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(23,47): error C2061: error de sintaxis: identificador 'Producto'
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(25,10): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(25,10): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(25,25): error C2238: símbolos (token) inesperados delante de ';'
-  Producto.cpp
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(13,11): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(13,11): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(13,20): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(23,47): error C2061: error de sintaxis: identificador 'Producto'
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(25,10): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(25,10): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lote.h(25,25): error C2238: símbolos (token) inesperados delante de ';'
-  Generando código...
+﻿  Interfaz.cpp
+C:\Users\CAU\source\repos\Tarea2\Tarea 2\Interfaz.cpp(33,29): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\CAU\source\repos\Tarea2\Tarea 2\Interfaz.cpp(48,29): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\CAU\source\repos\Tarea2\Tarea 2\Interfaz.cpp(196): warning C4717: 'Interfaz::ingresarLotesProducto': recursive on all control paths, function will cause runtime stack overflow
+C:\Users\CAU\source\repos\Tarea2\Tarea 2\Interfaz.cpp(151): warning C4717: 'Interfaz::ingresarProductos': recursive on all control paths, function will cause runtime stack overflow
+  Tarea 2.vcxproj -> C:\Users\CAU\Source\Repos\Tarea2\x64\Debug\Tarea 2.exe
