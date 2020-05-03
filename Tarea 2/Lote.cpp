@@ -26,4 +26,6 @@ string Lote::toStringLote()
 	s << "Fecha: " << dia << "-" << mes << "-" << anio << endl;
 	s << "Cantidad: " << cantidad << endl;
 	s << "Costo: " << costo << endl;
+
+	return s.str();
 }

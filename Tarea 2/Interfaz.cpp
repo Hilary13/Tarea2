@@ -3,7 +3,8 @@
 //--------------------------VARIABLES GLOBALES-----------------------------
 
 int contAux = 0;
-
+Lista<Producto>* listproducto = new Lista<Producto>;
+Lista<Lote>* listlote = new Lista<Lote>;
 
 //-------------------------------------------------------------------------
 
@@ -69,3 +70,115 @@ void Interfaz::color(int c)
 {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), c);
 }
+
+void Interfaz::ingresarProductos()
+{
+	std::cin.ignore();
+	cout << " \n";
+	cout << "       +---------------------------------------------------+" << endl;
+	cout << "       |                 Ingresar Producto                 |" << endl;
+	cout << "       +---------------------------------------------------+" << endl;
+	cout << "       |                                                   |" << endl;
+	cout << "       |     Ingrese el código del producto:               |" << endl;
+	cout << "       |                                                   |" << endl;
+	cout << "       +---------------------------------------------------+" << endl;
+	cout << "       Código:  ";
+	int codigo = Interfaz::leerInt();
+	while (!listproducto->verificarCodigoExiste(codigo)) {
+
+
+		system("cls");
+		cout << "       +---------------------------------------------------+" << endl;
+		cout << "       |                 Ingresar Producto                 |" << endl;
+		cout << "       +---------------------------------------------------+" << endl;
+		cout << "       |                                                   |" << endl;
+		cout << "       |     Ingrese el código del producto:               |" << endl;
+		cout << "       |                                                   |" << endl;
+		cout << "       +---------------------------------------------------+" << endl;
+		cout << "       Nombre:  ";
+		string nombre = Interfaz::leerString();
+
+		system("cls");
+		cout << "       +---------------------------------------------------+" << endl;
+		cout << "       |                 Ingresar Producto                 |" << endl;
+		cout << "       +---------------------------------------------------+" << endl;
+		cout << "       |                                                   |" << endl;
+		cout << "       |     Ingrese el proveedor del producto:            |" << endl;
+		cout << "       |                                                   |" << endl;
+		cout << "       +---------------------------------------------------+" << endl;
+		cout << "       Producto:  ";
+		string proovedor = Interfaz::leerString();
+
+		system("cls");
+		cout << "       +---------------------------------------------------+" << endl;
+		cout << "       |                 Ingresar Producto                 |" << endl;
+		cout << "       +---------------------------------------------------+" << endl;
+		cout << "       |                                                   |" << endl;
+		cout << "       |     Ingrese el precio del producto:               |" << endl;
+		cout << "       |                                                   |" << endl;
+		cout << "       +---------------------------------------------------+" << endl;
+		cout << "       Precio:  ";
+		int precio = Interfaz::leerInt();
+
+		system("cls");
+
+		Producto* producto = new Producto(codigo, nombre, proovedor, precio);
+		listproducto->insertarInicio(producto);
+		cout << "Producto ingresado correctamente" << endl;
+		producto->toStringProducto();
+		system("pause");
+		system("cls");
+		Controladora::menuPrincipal();
+	}
+	
+	cout << "Error, este número de código ya existe" << endl;
+	system("pause");
+	system("cls");
+	Interfaz::ingresarProductos();
+}
+
+void Interfaz::ingresarLotesProducto()
+{
+	Producto* produAux;
+	system("cls");
+	cout << "       +---------------------------------------------------+" << endl;
+	cout << "       |                   Ingresar Lote                   |" << endl;
+	cout << "       +---------------------------------------------------+" << endl;
+	cout << "       |                                                   |" << endl;
+	cout << "       |     Ingrese el código del producto:               |" << endl;
+	cout << "       |                                                   |" << endl;
+	cout << "       +---------------------------------------------------+" << endl;
+	cout << "       Código:  ";
+	int codigo_produ = Interfaz::leerInt();
+
+	while (listproducto->verificarCodigoExiste(codigo_produ)) {
+
+		codigo_produ = produAux->getCodigo();
+		cout << produAux->toStringProducto();
+
+		system("cls");
+		cout << "       +---------------------------------------------------+" << endl;
+		cout << "       |                   Ingresar Lote                   |" << endl;
+		cout << "       +---------------------------------------------------+" << endl;
+		cout << "       |                                                   |" << endl;
+		cout << "       |     Ingrese el código del producto:               |" << endl;
+		cout << "       |                                                   |" << endl;
+		cout << "       +---------------------------------------------------+" << endl;
+		cout << "       Código:  ";
+		int codigo_lote = Interfaz::leerInt();
+
+		while (!listlote->verificarCodigoExiste(codigo_lote)) {
+
+
+
+
+		}
+		cout << "Código de lote ya existe";
+		Interfaz::ingresarLotesProducto(); 
+	}
+
+	cout << "Codigo de producto inexistente. Ingrese un código válido" << endl;
+	Interfaz::ingresarLotesProducto();
+
+}
+

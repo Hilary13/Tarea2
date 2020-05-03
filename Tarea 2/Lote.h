@@ -10,7 +10,7 @@ class Lote
 {
 private:
 
-	Producto* producto;
+	Producto *producto;
 	int codigo;
 	int dia;
 	int mes;

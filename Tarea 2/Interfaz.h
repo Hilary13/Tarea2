@@ -6,6 +6,7 @@
 #include "Lista.h"
 #include "Producto.h"
 #include "Lote.h"
+#include "Controladora.h"
 
 using namespace std;
 
@@ -28,7 +29,8 @@ public:
 
 	//---------------Producto---------------------
 
-	static void ingresarUsuario();
+	static void ingresarProductos();
+	static void ingresarLotesProducto();
 
 };
 
