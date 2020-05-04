@@ -1,9 +1,1 @@
-﻿  Controladora.cpp
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lista.h(38,9): error C2760: error de sintaxis: token inesperado "identificador", se esperaba ";"
-  Interfaz.cpp
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lista.h(38,9): error C2760: error de sintaxis: token inesperado "identificador", se esperaba ";"
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Interfaz.cpp(33,29): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Interfaz.cpp(48,29): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-  Main.cpp
-C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea 2\Tarea 2\Lista.h(38,9): error C2760: error de sintaxis: token inesperado "identificador", se esperaba ";"
-  Generando código...
+﻿  Tarea 2.vcxproj -> C:\Users\CAU\Source\Repos\Tarea2\x64\Debug\Tarea 2.exe

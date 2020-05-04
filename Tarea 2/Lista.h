@@ -35,13 +35,13 @@ template<class T>
 Producto Lista<T>::buscaCodigo(int i, T* aux)
 {
 	int codigo = 0;
-	string nombre = "";
-	string proveedor = "";
+	std::string nombre = "";
+	std::string proveedor = "";
 	int precio = 0;
 
 	Nodo<Producto>* actual = primero;
 	while (actual) {
-		if ((*actual->getInfo()->getCodigo()) == i) {
+		if (((*actual->getInfo()).getCodigo()) == i) {
 
 			codigo = ((*actual->getInfo()).getCodigo());
 			nombre = ((*actual->getInfo()).getNombre());
