@@ -83,6 +83,53 @@ void Interfaz::color(int c)
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), c);
 }
 
+void Interfaz::verificarFecha(int dia, int mes, int anio)
+{
+
+	if (mes >= 1 && mes <= 12) {
+
+		switch (mes) {
+		case 1:
+		case 3:
+		case 5:
+		case 7:
+		case 8:
+		case 10:
+		case 12:
+			if (dia >= 1 && dia <= 31) {
+				cout << "";
+			}
+			else
+				cout << "Dia ingresado es incorrecto" << endl;
+			break;
+
+		case 4:
+		case 6:
+		case 9:
+		case 11:
+			if (dia >= 1 && dia <= 30) {
+				cout << "";
+			}
+			else
+				cout << "Día ingresado es incorrecto" << endl;
+			break;
+
+		case 2:
+			if (anio % 4 == 0 && anio % 100 != 0)
+				if (dia >= 1 && dia <= 29);
+				else { cout << "Día ingresado es inválido"; }
+			else
+				if (dia >= 1 && dia <= 28);
+				else { cout << "Día ingresado es inválido"; }
+			break;
+		}
+	}
+	else
+		cout << "El mes digitado es incorrecto, por favor ingréselo de nuevo" << endl;
+	system("pause");
+	system("cls");
+}
+
 void Interfaz::ingresarProductos()
 {
 	std::cin.ignore();
@@ -152,7 +199,14 @@ void Interfaz::ingresarProductos()
 
 void Interfaz::ingresarLotesProducto()
 {
-	Producto* produAux = new Producto;
+	int codigo_produ = 0;
+	string nombre = "";
+	string proveedor = "";
+	int precio = 0;
+
+	Producto* productoAux = new Producto(codigo_produ, nombre, proveedor, precio);
+	Producto* productoAux1 = new Producto(codigo_produ, nombre, proveedor, precio);
+
 	system("cls");
 	cout << "       +---------------------------------------------------+" << endl;
 	cout << "       |                   Ingresar Lote                   |" << endl;
@@ -162,36 +216,12 @@ void Interfaz::ingresarLotesProducto()
 	cout << "       |                                                   |" << endl;
 	cout << "       +---------------------------------------------------+" << endl;
 	cout << "       Código:  ";
-	int codigo_produ = Interfaz::leerInt();
+	codigo_produ = Interfaz::leerInt();
 
-	while (listproducto->verificarCodigoExiste(codigo_produ)) {
-
-		codigo_produ = produAux->getCodigo();
-		//cout << produAux->toStringProducto();
-
-		system("cls");
-		cout << "       +---------------------------------------------------+" << endl;
-		cout << "       |                   Ingresar Lote                   |" << endl;
-		cout << "       +---------------------------------------------------+" << endl;
-		cout << "       |                                                   |" << endl;
-		cout << "       |     Ingrese el código del producto:               |" << endl;
-		cout << "       |                                                   |" << endl;
-		cout << "       +---------------------------------------------------+" << endl;
-		cout << "       Código:  ";
-		int codigo_lote = Interfaz::leerInt();
-
-		while (!listlote->verificarCodigoExiste(codigo_lote)) {
-
-
-
-
-		}
-		cout << "Código de lote ya existe";
-		Interfaz::ingresarLotesProducto(); 
+	if ((listproducto->buscaCodigo(codigo_produ, productoAux) == (*productoAux1))) {
+		cout << "todo bien";
 	}
-
-	cout << "Codigo de producto inexistente. Ingrese un código válido" << endl;
-	Interfaz::ingresarLotesProducto();
-
+	cout << "Número de código no enciontrado en los registros" << endl;
+	
 }
 

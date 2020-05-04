@@ -25,7 +25,7 @@ public:
 	static int leerInt();
 	static bool validarInt(std::string);
 	static void color(int);
-
+	static void verificarFecha(int, int, int);
 
 	//---------------Producto---------------------
 

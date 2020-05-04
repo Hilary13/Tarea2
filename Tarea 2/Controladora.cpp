@@ -34,7 +34,7 @@ void Controladora::menuPrincipal()
 		case '2':
 		
 			system("cls");
-			//ingresar lotes a un producto
+			Interfaz::ingresarLotesProducto();
 			system("pause");
 			system("cls");
 			break;

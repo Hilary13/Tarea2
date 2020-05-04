@@ -14,6 +14,8 @@ public:
 	Lista();
 	Lista(Lista&);
 
+
+	Producto buscaCodigo(int, T*);
 	void insertarInicio(T*);
 	void insertarFinal(T*);
 	void eliminarInicio();
@@ -27,6 +29,43 @@ public:
 
 	bool verificarCodigoExiste(int);
 };
+
+
+template<class T>
+Producto Lista<T>::buscaCodigo(int i, T* aux)
+{
+	int codigo = 0;
+	string nombre = "";
+	string proveedor = "";
+	int precio = 0;
+
+	Nodo<Producto>* actual = primero;
+	while (actual) {
+		if ((*actual->getInfo()->getCodigo()) == i) {
+
+			codigo = ((*actual->getInfo()).getCodigo());
+			nombre = ((*actual->getInfo()).getNombre());
+			proveedor = ((*actual->getInfo()).getProveedor());
+			precio = ((*actual->getInfo()).getPrecio());
+			aux->setCodigo(codigo);
+			aux->setNombre(nombre);
+			aux->setProveedor(proveedor);
+			aux->setPrecio(precio);
+			return *aux;
+		}
+		actual = actual->getSig();
+	}
+	
+
+
+	aux->setCodigo(0);
+	aux->setNombre("");
+	aux->setProveedor("");
+	aux->setPrecio(0);
+	return *aux;
+
+}
+
 
 //-------------------------------------------------------------------------------------------------------------
 template<class T>
