@@ -55,9 +55,6 @@ Producto Lista<T>::buscaCodigo(int i, T* aux)
 		}
 		actual = actual->getSig();
 	}
-	
-
-
 	aux->setCodigo(0);
 	aux->setNombre("");
 	aux->setProveedor("");

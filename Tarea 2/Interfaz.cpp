@@ -216,12 +216,14 @@ void Interfaz::ingresarLotesProducto()
 	cout << "       |                                                   |" << endl;
 	cout << "       +---------------------------------------------------+" << endl;
 	cout << "       Código:  ";
+	cin.ignore();
 	codigo_produ = Interfaz::leerInt();
-
-	if ((listproducto->buscaCodigo(codigo_produ, productoAux) == (*productoAux1))) {
+	*productoAux = (listproducto->buscaCodigo(codigo_produ, productoAux));
+	if (*productoAux != *productoAux1) {
 		cout << "todo bien";
+		cout << productoAux->toStringProducto();
 	}
-	cout << "Número de código no enciontrado en los registros" << endl;
+	//cout << "Número de código no enciontrado en los registros" << endl;
 	
 }
 
