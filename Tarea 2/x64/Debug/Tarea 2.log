@@ -1,5 +1,2 @@
-﻿  Interfaz.cpp
-C:\Users\CAU\source\repos\Tarea2\Tarea 2\Interfaz.cpp(33,29): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\CAU\source\repos\Tarea2\Tarea 2\Interfaz.cpp(48,29): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\CAU\source\repos\Tarea2\Tarea 2\Interfaz.cpp(198): warning C4717: 'Interfaz::ingresarProductos': recursive on all control paths, function will cause runtime stack overflow
-  Tarea 2.vcxproj -> C:\Users\CAU\Source\Repos\Tarea2\x64\Debug\Tarea 2.exe
+﻿  Lote.cpp
+  Tarea 2.vcxproj -> C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea2\x64\Debug\Tarea 2.exe

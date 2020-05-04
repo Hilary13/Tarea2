@@ -220,10 +220,81 @@ void Interfaz::ingresarLotesProducto()
 	codigo_produ = Interfaz::leerInt();
 	*productoAux = (listproducto->buscaCodigo(codigo_produ, productoAux));
 	if (*productoAux != *productoAux1) {
-		cout << "todo bien";
+		/*cout << "todo bien";*/
+		cout << "Producto: " << endl;
 		cout << productoAux->toStringProducto();
+		system("pause");
+		system("cls");
+		cout << "       +---------------------------------------------------+" << endl;
+		cout << "       |                   Ingresar Lote                   |" << endl;
+		cout << "       +---------------------------------------------------+" << endl;
+		cout << "       |                                                   |" << endl;
+		cout << "       |     Ingrese el código del producto:               |" << endl;
+		cout << "       |                                                   |" << endl;
+		cout << "       +---------------------------------------------------+" << endl;
+		cout << "       Código:  ";
+		int codigo_lote = Interfaz::leerInt();
+		system("pause");
+
+		while (!listlote->verificarCodigoExiste(codigo_lote)) {
+
+			system("cls");
+			cout << "       +---------------------------------------------------+" << endl;
+			cout << "       |                   Ingresar Lote                   |" << endl;
+			cout << "       +---------------------------------------------------+" << endl;
+			cout << "       |                                                   |" << endl;
+			cout << "       |     Ingrese la fecha de ingreso:                  |" << endl;
+			cout << "       |                                                   |" << endl;
+			cout << "       +---------------------------------------------------+" << endl;
+			cout << "       Día:  ";
+			int dia = Interfaz::leerInt(); cout << " \n";
+			cout << "       Mes:  ";
+			int mes = Interfaz::leerInt(); cout << " \n";
+			cout << "       Año:  ";
+			int anio = Interfaz::leerInt(); cout << " \n";
+			Interfaz::verificarFecha(dia, mes, anio);
+
+
+			system("cls");
+			cout << "       +---------------------------------------------------+" << endl;
+			cout << "       |                   Ingresar Lote                   |" << endl;
+			cout << "       +---------------------------------------------------+" << endl;
+			cout << "       |                                                   |" << endl;
+			cout << "       |     Ingrese la cantidad de productos:             |" << endl;
+			cout << "       |                                                   |" << endl;
+			cout << "       +---------------------------------------------------+" << endl;
+			cout << "       Código:  ";
+			int cantidad = Interfaz::leerInt();
+			system("pause");
+
+
+			system("cls");
+			cout << "       +---------------------------------------------------+" << endl;
+			cout << "       |                   Ingresar Lote                   |" << endl;
+			cout << "       +---------------------------------------------------+" << endl;
+			cout << "       |                                                   |" << endl;
+			cout << "       |     Ingrese el costo:                             |" << endl;
+			cout << "       |                                                   |" << endl;
+			cout << "       +---------------------------------------------------+" << endl;
+			cout << "       Código:  ";
+			int costo = Interfaz::leerInt();
+			system("pause");
+
+
+
+			Lote* lote = new Lote(productoAux, codigo_lote, dia, mes, anio, cantidad, costo);
+			listlote->insertarInicio(lote);
+			cout << "Lote ingresado correctamente" << endl;
+			cout << lote->toStringLote() << endl;
+			system("pause");
+			system("cls");
+
+		}
+
+		cout << "Código de lote ya existe" << endl;
+		Interfaz::ingresarLotesProducto();
 	}
-	//cout << "Número de código no enciontrado en los registros" << endl;
-	
+	cout << "Número de código no encontrado en los registros" << endl;
+	Interfaz::ingresarLotesProducto();
 }
 

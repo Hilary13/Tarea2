@@ -22,7 +22,7 @@ string Lote::toStringLote()const
 {
 	stringstream s;
 
-	s << "Producto: " << producto->getNombre() << endl;
+	s << "Producto: " << producto->toStringProducto() << endl << endl;
 	s << "Codigo: " << codigo << endl;
 	s << "Fecha: " << dia << "-" << mes << "-" << anio << endl;
 	s << "Cantidad: " << cantidad << endl;
