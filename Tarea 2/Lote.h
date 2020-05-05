@@ -15,15 +15,17 @@ private:
 	int anio;
 	int cantidad;
 	int costo;
+	int descuento;
 
 public:
 
-	Lote(Producto*, int, int, int, int, int, int);
+	Lote(Producto*, int, int, int, int, int, int, int);
 
 	Producto* getProducto();
 	int getCantidad();
 	int getCosto();
 	int getCodigo();
+	int getDescuento();
 	virtual std::string toStringLote()const;
 
 	bool operator==(const Lote&);

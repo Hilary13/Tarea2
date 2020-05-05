@@ -1,6 +1,6 @@
 #include "Lote.h"
 using namespace  std;
-Lote::Lote(Producto* producto, int codigo, int dia, int mes, int anio, int cantidad, int costo)
+Lote::Lote(Producto* producto, int codigo, int dia, int mes, int anio, int cantidad, int costo, int descuento)
 {
 	this->producto = producto;
 	this->codigo = codigo;
@@ -9,6 +9,7 @@ Lote::Lote(Producto* producto, int codigo, int dia, int mes, int anio, int canti
 	this->anio = anio;
 	this->cantidad = cantidad;
 	this->costo = costo;
+	this->descuento = descuento;
 }
 
 Producto* Lote::getProducto() { return producto; }
@@ -16,7 +17,10 @@ Producto* Lote::getProducto() { return producto; }
 int Lote::getCantidad() { return cantidad; }
 
 int Lote::getCosto() { return costo; }
+
 int Lote::getCodigo() { return codigo; }
+
+int Lote::getDescuento() { return descuento; }
 
 string Lote::toStringLote()const
 {
@@ -27,6 +31,7 @@ string Lote::toStringLote()const
 	s << "Fecha: " << dia << "-" << mes << "-" << anio << endl;
 	s << "Cantidad: " << cantidad << endl;
 	s << "Costo: " << costo << endl;
+	s << "Descuento: " << descuento << endl;
 
 	return s.str();
 }

@@ -281,8 +281,8 @@ void Interfaz::ingresarLotesProducto()
 			system("pause");
 
 
-
-			Lote* lote = new Lote(productoAux, codigo_lote, dia, mes, anio, cantidad, costo);
+			int descuento = 0;
+			Lote* lote = new Lote(productoAux, codigo_lote, dia, mes, anio, cantidad, costo, descuento);
 			listlote->insertarInicio(lote);
 			cout << "Lote ingresado correctamente" << endl;
 			cout << lote->toStringLote() << endl;
@@ -296,5 +296,11 @@ void Interfaz::ingresarLotesProducto()
 	}
 	cout << "Número de código no encontrado en los registros" << endl;
 	Interfaz::ingresarLotesProducto();
+}
+
+void Interfaz::ingresarDescuentos()
+{
+
+
 }
 

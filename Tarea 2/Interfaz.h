@@ -31,6 +31,7 @@ public:
 
 	static void ingresarProductos();
 	static void ingresarLotesProducto();
+	static void ingresarDescuentos();
 
 };
 
