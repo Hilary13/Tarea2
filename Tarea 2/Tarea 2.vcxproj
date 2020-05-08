@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Controladora.cpp" />
+    <ClCompile Include="Factura.cpp" />
     <ClCompile Include="Interfaz.cpp" />
     <ClCompile Include="Lote.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -27,6 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controladora.h" />
+    <ClInclude Include="Factura.h" />
     <ClInclude Include="Interfaz.h" />
     <ClInclude Include="Lista.h" />
     <ClInclude Include="Lote.h" />

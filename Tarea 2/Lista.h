@@ -19,6 +19,10 @@ public:
 	Producto buscaCodigo(int, T*);
 	Lista<T>* retornaListCodigo(int);
 	bool cambiaDescuento(int, float);
+	bool verificaInventario(int, int);
+	float getPrecio(int);
+	float getDescuento(int);
+	Lista<T>* facturasPorCobrar();
 	void insertarInicio(T*);
 	void insertarFinal(T*);
 	void eliminarInicio();
@@ -104,6 +108,72 @@ bool Lista<T>::cambiaDescuento(int i, float des)
 	return false;
 }
 
+template<class T>
+bool Lista<T>::verificaInventario(int i, int cantidad)
+{
+	Nodo<T>* actual = primero;
+	while (actual) {
+		if (((actual->getInfo())->getCodigo()) == i) {
+			if (((actual->getInfo())->getCantidad()) >= cantidad) {
+				(actual->getInfo())->setCantidad((actual->getInfo())->getCantidad() - cantidad);
+				return true;
+			}
+			return false;
+		}
+		actual = actual->getSig();
+	}
+	return false;
+}
+
+template<class T>
+inline float Lista<T>::getPrecio(int i)
+{
+	Nodo<T>* actual = primero;
+	while (actual) {
+		if (((actual->getInfo())->getCodigo()) == i) {
+
+			return (((actual->getInfo())->getProducto())->getPrecio());
+			
+		}
+		actual = actual->getSig();
+	}
+	return 0;
+}
+
+template<class T>
+inline float Lista<T>::getDescuento(int i)
+{
+	Nodo<T>* actual = primero;
+	while (actual) {
+		if (((actual->getInfo())->getCodigo()) == i) {
+
+			return ((actual->getInfo())->getDescuento());
+
+		}
+		actual = actual->getSig();
+	}
+	return 0;
+}
+
+template<class T>
+inline Lista<T>* Lista<T>::facturasPorCobrar()
+{
+	Lista<T>* listAux = new Lista<T>;
+
+	Nodo<T>* actual = primero;
+
+	while (actual)
+	{
+		if (((actual->getInfo())->getCancelada()) == false){
+
+			T* aux = actual->getInfo();
+			listAux->insertarInicio(aux);
+
+		}
+		actual = actual->getSig();
+	}
+	return listAux;
+}
 
 //-------------------------------------------------------------------------------------------------------------
 template<class T>

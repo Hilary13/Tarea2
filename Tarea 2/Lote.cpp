@@ -1,5 +1,6 @@
 #include "Lote.h"
 using namespace  std;
+
 Lote::Lote(Producto* producto, int codigo, int dia, int mes, int anio, int cantidad, int costo, int descuento)
 {
 	this->producto = producto;
@@ -14,6 +15,14 @@ Lote::Lote(Producto* producto, int codigo, int dia, int mes, int anio, int canti
 
 Lote::Lote()
 {
+	this->producto = NULL;
+	this->codigo = 0;
+	this->dia = 0;
+	this->mes = 0;
+	this->anio = 0;
+	this->cantidad = 0;
+	this->costo = 0;
+	this->descuento = 0;
 }
 
 Producto* Lote::getProducto() { return producto; }

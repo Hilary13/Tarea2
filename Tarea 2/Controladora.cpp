@@ -12,11 +12,12 @@ void Controladora::menuPrincipal()
 		cout << "       |  1. Ingresar Productos al inventario          |" << endl;
 		cout << "       |  2. Ingresar lotes a un producto              |" << endl;
 		cout << "       |  3. Ingresar Descuentos                       |" << endl;
-		cout << "       |  4. Crear factura                             |" << endl;
-		cout << "       |  5. Mostar todas las facturas creadas         |" << endl;
-		cout << "       |  6. Mostrar facturas por cobrar               |" << endl;
-		cout << "       |  7. Probar sobrecarga de operadores           |" << endl;
-		cout << "       |  8. Salir                                     |" << endl;
+		cout << "       |  4. Muestra productos y lotes                 |" << endl;
+		cout << "       |  5. Crear factura                             |" << endl;
+		cout << "       |  6. Mostar todas las facturas creadas         |" << endl;
+		cout << "       |  7. Mostrar facturas por cobrar               |" << endl;
+		cout << "       |  8. Probar sobrecarga de operadores           |" << endl;
+		cout << "       |  9. Salir                                     |" << endl;
 		cout << "       |                                               |" << endl;
 		cout << "       +-----------------------------------------------+" << endl;
 		cout << "       Opcion: ";
@@ -50,7 +51,7 @@ void Controladora::menuPrincipal()
 		case '4':
 
 			system("cls");
-			//crear factura
+			Interfaz::muestraProductosLotes();
 			system("pause");
 			system("cls");
 			break;
@@ -58,7 +59,7 @@ void Controladora::menuPrincipal()
 		case '5':
 
 			system("cls");
-			//mostrar todas las facturas creadas
+			Interfaz::factura();
 			system("pause");
 			system("cls");
 			break;
@@ -66,7 +67,7 @@ void Controladora::menuPrincipal()
 		case '6':
 
 			system("cls");
-			//mostrar facturas por cobrar
+			Interfaz::muestraFacturas();
 			system("pause");
 			system("cls");
 			break;
@@ -74,12 +75,20 @@ void Controladora::menuPrincipal()
 		case '7':
 
 			system("cls");
-			//probar sobrecarga de operadores
+			Interfaz::muestraFacturasPorCobrar();
 			system("pause");
 			system("cls");
 			break;
 
 		case '8':
+
+			system("cls");
+			//probar sobrecarga de operadores
+			system("pause");
+			system("cls");
+			break;
+
+		case '9':
 			//----salir-----
 			cout << " \n";
 			cout << "       Saliendo del programa \n";

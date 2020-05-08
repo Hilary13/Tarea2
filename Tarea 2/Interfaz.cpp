@@ -1,10 +1,12 @@
 #include "Interfaz.h"
-
+using namespace std;
 //--------------------------VARIABLES GLOBALES-----------------------------
 
 int contAux = 0;
+static int nFactura = 0;
 Lista<Producto>* listproducto = new Lista<Producto>;
 Lista<Lote>* listlote = new Lista<Lote>;
+Lista<Factura>* listfactura = new Lista<Factura>;
 
 //-------------------------------------------------------------------------
 bool Interfaz::validarInt(string n)
@@ -220,7 +222,6 @@ void Interfaz::ingresarLotesProducto()
 	codigo_produ = Interfaz::leerInt();
 	*productoAux = (listproducto->buscaCodigo(codigo_produ, productoAux));
 	if (*productoAux != *productoAux1) {
-		/*cout << "todo bien";*/
 		cout << "Producto: " << endl;
 		cout << productoAux->toStringProducto();
 		system("pause");
@@ -263,7 +264,7 @@ void Interfaz::ingresarLotesProducto()
 			cout << "       |     Ingrese la cantidad de productos:             |" << endl;
 			cout << "       |                                                   |" << endl;
 			cout << "       +---------------------------------------------------+" << endl;
-			cout << "       Código:  ";
+			cout << "       Cantidad:  ";
 			int cantidad = Interfaz::leerInt();
 			system("pause");
 
@@ -276,7 +277,7 @@ void Interfaz::ingresarLotesProducto()
 			cout << "       |     Ingrese el costo:                             |" << endl;
 			cout << "       |                                                   |" << endl;
 			cout << "       +---------------------------------------------------+" << endl;
-			cout << "       Código:  ";
+			cout << "       Costo:  ";
 			int costo = Interfaz::leerInt();
 			system("pause");
 
@@ -299,7 +300,6 @@ void Interfaz::ingresarLotesProducto()
 	cout << "Número de código no encontrado en los registros" << endl;
 	Interfaz::ingresarLotesProducto();
 }
-
 
 void Interfaz::ingresarDescuentos()
 {
@@ -327,11 +327,158 @@ void Interfaz::ingresarDescuentos()
 
 		listAux->cambiaDescuento(codigoLote, descuento);
 		cout << listAux->toString();
+		*listlote = *listAux;
 	}
-	else {
+	else 
 		cout << "Codigo no existe, por favor ingrese uno válido" << endl;
+	
+}
+
+void Interfaz::muestraProductosLotes()
+{
+	cout << listlote->toString();
+}
+
+void Interfaz::factura()
+{
+	Producto* productoAux = new Producto();
+	Lista<Producto>* listproductoFactura = new Lista<Producto>;
+	bool cancelada = false;
+	bool masProductos = true;
+	Factura* factura = new Factura();
+	float subtotal = 0;
+	float descuento = 0;
+	float total = 0;
+	int op = 0;
+	system("cls");
+	cout << "       +---------------------------------------------------+" << endl;
+	cout << "       |                     Factura                       |" << endl;
+	cout << "       +---------------------------------------------------+" << endl;
+	cout << "       |                                                   |" << endl;
+	cout << "       |     Ingrese el nombre del Cliente:                |" << endl;
+	cout << "       |                                                   |" << endl;
+	cout << "       +---------------------------------------------------+" << endl;
+	cout << "       Nombre:  ";
+	string nombre = Interfaz::leerString();
+
+
+	system("cls");
+	cout << "       +---------------------------------------------------+" << endl;
+	cout << "       |                     Factura                       |" << endl;
+	cout << "       +---------------------------------------------------+" << endl;
+	cout << "       |                                                   |" << endl;
+	cout << "       |     Ingrese la cédula del Cliente:                |" << endl;
+	cout << "       |                                                   |" << endl;
+	cout << "       +---------------------------------------------------+" << endl;
+	cout << "       Cédula:  ";
+	int cedula = Interfaz::leerInt();
+
+
+	system("cls");
+	cout << "       +---------------------------------------------------+" << endl;
+	cout << "       |                     Factura                       |" << endl;
+	cout << "       +---------------------------------------------------+" << endl;
+	cout << "       |                                                   |" << endl;
+	cout << "       |     Ingrese la fecha de compra:                   |" << endl;
+	cout << "       |                                                   |" << endl;
+	cout << "       +---------------------------------------------------+" << endl;
+	cout << "       Día:  ";
+	int dia = Interfaz::leerInt(); cout << " \n";
+	cout << "       Mes:  ";
+	int mes = Interfaz::leerInt(); cout << " \n";
+	cout << "       Año:  ";
+	int anio = Interfaz::leerInt(); cout << " \n";
+	//Interfaz::verificarFecha(dia, mes, anio);
+
+	while (masProductos)
+	{
+	
+		while (masProductos) {
+	
+			system("cls");
+			cout << "       +---------------------------------------------------+" << endl;
+			cout << "       |                     Factura                       |" << endl;
+			cout << "       +---------------------------------------------------+" << endl;
+			cout << "       |                                                   |" << endl;
+			cout << "       |     Ingrese el código del producto:               |" << endl;
+			cout << "       |                                                   |" << endl;
+			cout << "       +---------------------------------------------------+" << endl;
+			cout << "       Código de producto:  ";
+			int codigoProducto = Interfaz::leerInt();
+			Lista<Lote>* listAux = listlote->retornaListCodigo(codigoProducto);
+			cout << listAux->toString();
+			cout << "Ingrese el código del lote del producto: ";
+			int codigoLote = Interfaz::leerInt(); cout << endl;
+			cout << "Ingrese la cantidad de productos: ";
+			float nProductos = 0;
+			cin >> nProductos;
+			if (listAux->verificarCodigoExiste(codigoLote)) {
+				if (listAux->verificaInventario(codigoLote, nProductos)) {
+					subtotal = subtotal + (listAux->getPrecio(codigoLote) * nProductos);
+					descuento = descuento + listAux->getDescuento(codigoLote);
+					total = (subtotal - descuento) * 1.15;
+					*productoAux = (listproducto->buscaCodigo(codigoLote, productoAux));
+					listproductoFactura->insertarInicio(productoAux);
+					cout << "\tDesea ingresar otro producto?\n ";
+					cout << "\t1) Sí\n ";
+					cout << "\t2) No\n ";
+					op = Interfaz::leerInt();
+					switch (op)
+					{
+					case 1:
+						masProductos = true;
+						break;
+					case 2:
+						masProductos = false;
+						break;
+
+					default:
+						cout << "\tError\n";
+						break;
+					}
+					if (masProductos) { break; }
+				}
+			}
+			else { cout << "Codigo no existe, por favor ingrese uno válido" << endl; }
+		
+			cout << listAux->toString();
+			*listlote = *listAux;
+			system("cls");
+			cout << "\tFactura Cancelada\n";
+			cout << "\t1) Sí\n ";
+			cout << "\t2) No\n ";
+			op = Interfaz::leerInt();
+			switch (op)
+			{
+			case 1:
+				cancelada = true;
+				break;
+			case 2:
+				cancelada = false;
+				break;
+
+			default:
+				cout << "\tError\n";
+				break;
+			}
+			nFactura++;
+			cout << listlote->toString();
+			*factura = Factura(nFactura, nombre, cedula, dia, mes, anio, listproductoFactura, subtotal, descuento, total, cancelada);
+			listfactura->insertarInicio(factura);
+			cout << factura->toString();
+		}
+		
 	}
 
+}
 
+void Interfaz::muestraFacturasPorCobrar()
+{
+	cout << (listfactura->facturasPorCobrar())->toString();
+}
+
+void Interfaz::muestraFacturas()
+{
+	cout << listfactura->toString();
 }
 
