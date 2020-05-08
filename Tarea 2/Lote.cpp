@@ -12,9 +12,21 @@ Lote::Lote(Producto* producto, int codigo, int dia, int mes, int anio, int canti
 	this->descuento = descuento;
 }
 
+Lote::Lote()
+{
+}
+
 Producto* Lote::getProducto() { return producto; }
 
+int Lote::getCodigoProducto() { return producto->getCodigo(); }
+
 int Lote::getCantidad() { return cantidad; }
+
+int Lote::getDia() { return dia; }
+
+int Lote::getMes() { return mes; }
+
+int Lote::getAnio() { return anio; }
 
 int Lote::getCosto() { return costo; }
 
@@ -22,11 +34,33 @@ int Lote::getCodigo() { return codigo; }
 
 int Lote::getDescuento() { return descuento; }
 
+void Lote::setProducto(Producto* producto) { this->producto = producto; }
+
+void Lote::setCodigoProducto(int codigo_produ) 
+{
+	int aux = 0;
+	this->producto->setCodigo(aux);
+}
+
+void Lote::setCantidad(int cantidad) { this->cantidad = cantidad; }
+
+void Lote::setDia(int dia) { this->dia = dia; }
+
+void Lote::setMes(int mes) { this->mes = mes; }
+
+void Lote::setAnio(int anio) { this->anio = anio; }
+
+void Lote::setCosto(int costo) { this->costo = costo; }
+
+void Lote::setCodigo(int codigo) { this->codigo = codigo; }
+
+void Lote::setDescuento(int descuento) { this->descuento = descuento; }
+
 string Lote::toStringLote()const
 {
 	stringstream s;
 
-	s << "Producto: " << producto->toStringProducto() << endl << endl;
+	s << "Producto: " << endl << producto->toStringProducto() << endl << endl;
 	s << "Codigo: " << codigo << endl;
 	s << "Fecha: " << dia << "-" << mes << "-" << anio << endl;
 	s << "Cantidad: " << cantidad << endl;

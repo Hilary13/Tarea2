@@ -1,6 +1,7 @@
 #ifndef LISTA_H
 #define LISTA_H
 #include "Nodo.h"
+#include "Lote.h"
 #include "Producto.h"
 
 template<class T>
@@ -16,6 +17,8 @@ public:
 
 
 	Producto buscaCodigo(int, T*);
+	Lista<T>* retornaListCodigo(int);
+	bool cambiaDescuento(int, float);
 	void insertarInicio(T*);
 	void insertarFinal(T*);
 	void eliminarInicio();
@@ -61,6 +64,44 @@ Producto Lista<T>::buscaCodigo(int i, T* aux)
 	aux->setPrecio(0);
 	return *aux;
 
+}
+
+//-------------------------------------------------------------------------------------------------------------
+
+template<class T>
+Lista<T>* Lista<T>::retornaListCodigo(int i)
+{
+	Lista<T>* listAux = new Lista<T>;
+
+	Nodo<T>* actual = primero;
+
+	while (actual)
+	{
+		if (((actual->getInfo())->getCodigoProducto()) == i) {
+
+			T* aux = actual->getInfo();
+			listAux->insertarInicio(aux);
+
+		}
+		actual = actual->getSig();
+	}
+	return listAux;
+}
+
+template<class T>
+bool Lista<T>::cambiaDescuento(int i, float des)
+{
+	Nodo<T>* actual = primero;
+	while (actual) {
+		if (((actual->getInfo())->getCodigo()) == i) {
+
+			actual->getInfo()->setDescuento(des);
+			return true;
+
+		}
+		actual = actual->getSig();
+	}
+	return false;
 }
 
 

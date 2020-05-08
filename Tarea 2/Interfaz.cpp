@@ -285,9 +285,11 @@ void Interfaz::ingresarLotesProducto()
 			Lote* lote = new Lote(productoAux, codigo_lote, dia, mes, anio, cantidad, costo, descuento);
 			listlote->insertarInicio(lote);
 			cout << "Lote ingresado correctamente" << endl;
+			cout << endl << endl << endl;
 			cout << lote->toStringLote() << endl;
 			system("pause");
 			system("cls");
+			Controladora::menuPrincipal();
 
 		}
 
@@ -298,8 +300,37 @@ void Interfaz::ingresarLotesProducto()
 	Interfaz::ingresarLotesProducto();
 }
 
+
 void Interfaz::ingresarDescuentos()
 {
+	
+	cin.ignore();
+	system("cls");
+	cout << "       +---------------------------------------------------+" << endl;
+	cout << "       |               Ingresar Descuentos                 |" << endl;
+	cout << "       +---------------------------------------------------+" << endl;
+	cout << "       |                                                   |" << endl;
+	cout << "       |     Ingrese el código del producto:               |" << endl;
+	cout << "       |                                                   |" << endl;
+	cout << "       +---------------------------------------------------+" << endl;
+	cout << "       Código de producto:  ";
+	int codigoProducto = Interfaz::leerInt(); 
+	Lista<Lote>* listAux = listlote->retornaListCodigo(codigoProducto);
+	cout << listAux->toString();
+
+	cout << "Ingrese el código del lote al que desea aplicar el descuento: ";
+	int codigoLote = Interfaz::leerInt(); cout << endl;
+	cout << "Ingrese el descuento que desea aplicarle al lote: ";
+	float descuento = 0;
+	cin >> descuento;
+	if (listAux->verificarCodigoExiste(codigoLote)) {
+
+		listAux->cambiaDescuento(codigoLote, descuento);
+		cout << listAux->toString();
+	}
+	else {
+		cout << "Codigo no existe, por favor ingrese uno válido" << endl;
+	}
 
 
 }

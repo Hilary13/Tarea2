@@ -1,2 +1,10 @@
-﻿  Lote.cpp
+﻿  Interfaz.cpp
+C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea2\Tarea 2\Interfaz.cpp(33,29): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea2\Tarea 2\Interfaz.cpp(48,29): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea2\Tarea 2\Lista.h(98,36): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea2\Tarea 2\Lista.h(93): message : al compilar la función del miembro clase plantilla "bool Lista<Lote>::cambiaDescuento(int,float)"
+C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea2\Tarea 2\Interfaz.cpp(328): message : Vea la referencia a la creación de una instancia de la función plantilla "bool Lista<Lote>::cambiaDescuento(int,float)" que se está compilando
+C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea2\Tarea 2\Interfaz.cpp(7): message : Vea la referencia a la creación de una instancia de clase plantilla "Lista<Lote>" que se está compilando
+C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea2\Tarea 2\Interfaz.cpp(198): warning C4717: 'Interfaz::ingresarProductos': recursiva para todas las rutas de acceso de control; la función provocará el desbordamiento de la pila en tiempo de ejecución
+C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea2\Tarea 2\Interfaz.cpp(301): warning C4717: 'Interfaz::ingresarLotesProducto': recursiva para todas las rutas de acceso de control; la función provocará el desbordamiento de la pila en tiempo de ejecución
   Tarea 2.vcxproj -> C:\Users\Hilary\Desktop\Todo\UNA\Semestre\I Ciclo 2020\Programación II\Tarea 2\Tarea2\x64\Debug\Tarea 2.exe

@@ -9,6 +9,7 @@ int main() {
 	Controladora* c = new Controladora();
 	//c->inicio();
 	c->menuPrincipal();
+
 	system("pause");
 	return 0;
 }

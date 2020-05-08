@@ -20,12 +20,28 @@ private:
 public:
 
 	Lote(Producto*, int, int, int, int, int, int, int);
+	Lote();
 
 	Producto* getProducto();
+	int getCodigoProducto();
 	int getCantidad();
+	int getDia();
+	int getMes();
+	int getAnio();
 	int getCosto();
 	int getCodigo();
 	int getDescuento();
+
+	void setProducto(Producto*);
+	void setCodigoProducto(int);
+	void setCantidad(int);
+	void setDia(int);
+	void setMes(int);
+	void setAnio(int);
+	void setCosto(int);
+	void setCodigo(int);
+	void setDescuento(int);
+	
 	virtual std::string toStringLote()const;
 
 	bool operator==(const Lote&);

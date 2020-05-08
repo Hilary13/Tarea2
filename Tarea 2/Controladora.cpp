@@ -42,7 +42,7 @@ void Controladora::menuPrincipal()
 		case '3':
 
 			system("cls");
-			//ingresar descuentos
+			Interfaz::ingresarDescuentos();
 			system("pause");
 			system("cls");
 			break;
